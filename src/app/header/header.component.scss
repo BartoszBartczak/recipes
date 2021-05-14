@@ -1,0 +1,14 @@
+@import "../../varriables.scss";
+.header {
+    background-color: $color-primary;
+    padding: $space-default;
+
+    &--logo {
+        display: inline-block;
+        margin: 0 0 0 20px;
+        color: $color-secondary;
+        font-weight: 900;
+        font-size: 40px;
+        cursor: pointer;
+    }
+}

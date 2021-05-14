@@ -1,0 +1,34 @@
+<app-header></app-header>
+<ul class="list">
+    <li class="list-item">
+        <a routerLink="/create">
+            <div class="list-item--picture list-item--picture__create">
+                <div>
+                    +     
+                </div>
+            </div>
+            <p class="list-item--description">Stwórz</p>
+        </a>
+    </li>
+    <li class="list-item" *ngFor="let recipe of currentRecipes">
+        <a routerLink="/show/{{ recipe.id }}">
+            <img
+                width="300px"
+                height="200px"
+                class="list-item--picture"
+                src="{{ recipe.pictureUrl }}"
+                alt="{{ recipe.name }}"
+            />
+            <h2 class="list-item--title">{{ recipe.name }}, Kuchnia {{ recipe.cousine }}</h2>
+            <h3 class="list-item--description">Czas przygotowania: {{ recipe.cookingTime }} minut</h3>
+        </a>
+    </li>
+</ul>
+<div class="pagination">
+    <button class="pagination--button" [disabled]="!hasPrev" (click)="goToPage(0)"><<</button>
+    <button class="pagination--button" *ngIf="hasPrev" (click)="goToPage(this.currentPage - 1)">{{ currentPage - 1 }}</button>
+    <button class="pagination--button" disabled>{{ currentPage }}</button>
+    <button class="pagination--button" *ngIf="hasNext" (click)="goToPage(this.currentPage + 1)">{{ currentPage + 1 }}</button>
+    <button class="pagination--button" [disabled]="!hasNext" (click)="goToPage(this.lastPage)">>></button>
+</div>
+<app-footer></app-footer>

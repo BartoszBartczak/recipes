@@ -1,0 +1,75 @@
+@import "../../varriables.scss";
+
+.list {
+    text-align: center;
+}
+
+.list-item {
+    display: inline-block;
+    width: 300px;
+    border: 1px solid $color-primary;
+    margin: $space-half;
+    overflow: hidden;
+    border-radius: $radius-default;
+
+    &--picture {
+        width: 100%;
+        display: block;
+    
+        &__create {
+          height: 200px;
+          padding-bottom: 41px;
+          color: $color-primary;
+          font-weight: 900;
+          font-size: 150px;
+        }
+      }
+
+      &--title,
+      &--description {
+        color: $color-primary;
+        margin: 0;
+        text-align: left;
+        padding-left: $space-default;
+        padding: $space-default;
+      }
+    
+      &--title {
+        padding-bottom: 0;
+        font-size: 22px;
+      }
+    
+      &--description {
+        font-weight: 400;
+      }
+}
+
+.pagination {
+  padding: $space-default $space-double;
+  text-align: center;
+
+  &--button {
+    display: inline-block;
+    border: 1px solid $color-primary;
+    border-radius: $radius-default;
+    color: $color-primary;
+    background-color: $color-secondary;
+    font-size: 14px;
+    padding: $space-half $space-double;
+    margin-right: $space-default;
+    cursor: pointer;
+    transition: .5s background-color, .5s color;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-secondary;
+    }
+
+    &[disabled] {
+      background-color: $color-disabled;
+      border-color: $color-disabled;
+      color: $color-secondary;
+      cursor: initial;
+    }
+  }
+}
